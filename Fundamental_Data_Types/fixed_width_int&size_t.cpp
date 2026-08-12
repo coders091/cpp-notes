@@ -53,5 +53,9 @@ int main() {
 
 
 
+   // lil about scientific notation:
+   std::cout << 2.3e4 * 1.26e3 << '\n';
+   std::cout << 2.2e-32 * -343.23e-232 * 232.23e-23 << '\n';
+
     return 0;
 }
