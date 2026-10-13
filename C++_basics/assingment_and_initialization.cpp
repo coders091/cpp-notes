@@ -6,9 +6,17 @@ int main(){
     
     
     [[maybe_unused]] int x;              //deafault initialization
+
     [[maybe_unused]] int a = 1;          //copy initialiation
+
     [[maybe_unused]] int b (1);          //direct initialization
-    [[maybe_unused]] int c {1};          // List initialization (Most preferred as it prevents data loss via narrowing conversion).
+    
+    [[maybe_unused]] int c {};          //  VALUR INITIALIZATION (Most preferred as it prevents data loss via narrowing conversion). it assumes the value as 0. 
+    // ex. of narrowing conversions, say int a (1.2); here narrowing conversion will happena nd output will be 1 instead of 1.2
+    // but here in direct initialization 1.2 will be 1.2
+
+
+    [[maybe_unused__]] int d{1};         // this is direct list initialization... 
   /*   int d (123.11);
     std::cout<<d << '\n'; */
 
@@ -29,7 +37,7 @@ int main(){
     // 2. Undefined Behavior (UB)
     // CRITICAL: Reading an uninitialized variable like 'p' results in Undefined Behavior.
     // The compiler can output garbage data, crash, or introduce unpredictable bugs.
-    // std::cout << p << '\n';
+     std::cout << p << '\n';
   
     return 0;
 }
